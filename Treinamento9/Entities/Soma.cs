@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Treinamento9
 {
@@ -20,13 +21,19 @@ namespace Treinamento9
 
         public double ResultSoma()
         {
-                        
-            return Val + Val2;
+            Console.Write("Digite o primeiro número: ");
+            Val = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Digite o segundo número: ");
+            Val2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);            
+            Console.ForegroundColor = ConsoleColor.Green;            
+            double sum = Val + Val2;
+            return sum;
+            Console.ReadLine();
         }
 
         public override string ToString()
         {
-            return "O resultado da operação " + Val + " + " + Val2 + " é: ";
+            return "O resultado da operação de Soma é = " + ResultSoma();
         }
     }
 }
